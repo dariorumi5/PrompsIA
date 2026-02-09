@@ -2,7 +2,7 @@ const groups = [
   {
     id: 'enhypen',
     name: 'ENHYPEN',
-    image: 'imagenes/enhypen.svg',
+    image: 'imagenes/enhypen.png',
     debut: '2020-11-30',
     initialTier: 'S',
     members: [
@@ -18,7 +18,7 @@ const groups = [
   {
     id: 'ateez',
     name: 'ATEEZ',
-    image: 'imagenes/ateez.svg',
+    image: 'imagenes/ateez.jpg',
     debut: '2018-10-24',
     initialTier: 'A',
     members: [
@@ -35,7 +35,7 @@ const groups = [
   {
     id: 'izna',
     name: 'Izna',
-    image: 'imagenes/izna.svg',
+    image: 'imagenes/izna.jpg',
     debut: '2024 (Proyecto Wakeone)',
     initialTier: 'B',
     members: [
@@ -50,7 +50,7 @@ const groups = [
   {
     id: 'andteam',
     name: '&TEAM',
-    image: 'imagenes/andteam.svg',
+    image: 'imagenes/&team.png',
     debut: '2022-12-28',
     initialTier: 'C',
     members: [
