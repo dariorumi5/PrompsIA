@@ -16,6 +16,7 @@
     <section class="hero">
       <h2>Mis 4 grupos de K-Pop favoritos</h2>
       <p>Explora cada grupo y conoce a sus integrantes. Arrastra para rankear en el Tier.</p>
+      <button class="btn-tierlist" onclick="document.getElementById('tierlist-section').scrollIntoView({behavior:'smooth'})">Ir a Tierlist →</button>
     </section>
 
     <section class="groups-grid" id="groupsGrid">
@@ -26,7 +27,7 @@
       <!-- Populated by JS -->
     </section>
 
-    <section class="tierlist">
+    <section class="tierlist" id="tierlist-section">
       <h3>Tier Ranking (Arrastra para cambiar posición)</h3>
       <div class="tier-headers">
         <div class="tier-label">S</div>
