@@ -36,13 +36,15 @@ const groups = [
     id: 'izna',
     name: 'Izna',
     image: 'imagenes/izna.svg',
-    debut: '2024 (Proyecto IZ)',
+    debut: '2024 (Proyecto Wakeone)',
     initialTier: 'B',
     members: [
-      {name:'Chaewon', position:'Leader, Vocalist'},
-      {name:'Sakura', position:'Lead Dancer, Vocalist'},
-      {name:'Eunbi', position:'Main Vocalist'},
-      {name:'Yuri', position:'Lead Dancer, Rapper'}
+      {name:'Jeemin', position:'Center'},
+      {name:'Sarang', position:'AllRounder'},
+      {name:'Mai', position:'Visual'},
+      {name:'Koko', position:'Main Dancer'},
+      {name:'Jungeun', position:'Main Vocal'},
+      {name:'Saebi', position:'Sub-Dancer, Sub-Vocal'}
     ]
   },
   {
