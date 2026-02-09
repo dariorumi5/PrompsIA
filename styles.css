@@ -35,8 +35,11 @@ body{
 .group-header .meta{color:var(--muted);font-size:0.85rem;margin-top:4px}
 .group-image{width:100%;height:180px;object-fit:cover}
 
+/* Members Container */
+.members-container{margin-bottom:40px}
+
 /* Members Section */
-.members-section{margin-bottom:40px;scroll-margin-top:80px}
+.members-section{margin-bottom:40px;scroll-margin-top:80px;background:rgba(232,93,138,0.05);padding:16px;border-radius:10px;border:1px solid rgba(232,93,138,0.15)}
 .members-section h3{margin-top:0;padding:12px;background:linear-gradient(180deg,rgba(232,93,138,0.2),transparent);border-radius:8px;color:#fff}
 .members-table{width:100%;border-collapse:collapse;background:rgba(232,93,138,0.08);border-radius:8px;overflow:hidden}
 .members-table th{background:rgba(232,93,138,0.2);padding:10px;text-align:left;font-weight:600;color:var(--accent)}
