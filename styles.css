@@ -27,7 +27,7 @@ body{
 .hero h2{margin-top:0}
 
 /* Button Container */
-.btn-container{display:flex;justify-content:center;margin:24px 0;padding:16px}
+.btn-container{display:flex;justify-content:center;gap:16px;margin:24px 0;padding:16px;flex-wrap:wrap}
 .btn-tierlist{background:linear-gradient(135deg,#4a7ba7,#5d8fbe);border:2px solid var(--accent);color:#fff;padding:14px 32px;border-radius:10px;cursor:pointer;font-weight:700;font-size:1.05rem;transition:all 0.3s ease;box-shadow:0 6px 20px rgba(74,123,167,0.25)}
 .btn-tierlist:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(74,123,167,0.35);background:linear-gradient(135deg,#5d8fbe,#6b9fbf)}
 
