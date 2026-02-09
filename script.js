@@ -50,7 +50,7 @@ const groups = [
   {
     id: 'andteam',
     name: '&TEAM',
-    image: 'imagenes/&team.png',
+    image: 'imagenes/andteam.png',
     debut: '2022-12-28',
     initialTier: 'C',
     members: [
