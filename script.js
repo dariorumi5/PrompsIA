@@ -63,23 +63,47 @@ const groups = [
   }
 ];
 
-// Render Group Cards with Members Table
+// Render Group Cards (simplified - no members inside)
 function renderGroupsGrid(){
   const grid = document.getElementById('groupsGrid');
   grid.innerHTML = groups.map(g=>`
-    <div class="group-card">
+    <div class="group-card" data-group-id="${g.id}">
       <div class="group-header">
         <h3>${g.name}</h3>
         <div class="meta">Debut: ${g.debut}</div>
       </div>
       <img src="${g.image}" alt="${g.name}" class="group-image" />
-      <div class="group-members">
-        <h4>Integrantes (${g.members.length})</h4>
-        <table class="members-table">
-          ${g.members.map(m=>`<tr><td>${m.name}</td><td>${m.position}</td></tr>`).join('')}
-        </table>
-      </div>
     </div>
+  `).join('');
+
+  // Add click listeners
+  document.querySelectorAll('.group-card').forEach(card=>{
+    card.addEventListener('click', ()=>{
+      const groupId = card.dataset.groupId;
+      const section = document.getElementById(`members-${groupId}`);
+      if(section) section.scrollIntoView({behavior:'smooth'});
+    });
+  });
+}
+
+// Render Members Tables (separate sections)
+function renderMembersSection(){
+  const container = document.getElementById('membersContainer');
+  container.innerHTML = groups.map(g=>`
+    <section class="members-section" id="members-${g.id}">
+      <h3>${g.name} — Integrantes (${g.members.length})</h3>
+      <table class="members-table">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Posición</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${g.members.map(m=>`<tr><td>${m.name}</td><td>${m.position}</td></tr>`).join('')}
+        </tbody>
+      </table>
+    </section>
   `).join('');
 }
 
@@ -131,5 +155,6 @@ function setupTierlist(){
 // Initialize
 document.addEventListener('DOMContentLoaded', ()=>{
   renderGroupsGrid();
+  renderMembersSection();
   setupTierlist();
 });
