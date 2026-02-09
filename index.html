@@ -9,19 +9,23 @@
 <body>
   <header class="site-header">
     <h1>Tierlist Kpop</h1>
-    <p class="subtitle">Tus grupos favoritos en una landing responsive</p>
+    <p class="subtitle">Tus grupos favoritos — timeline e integrantes</p>
   </header>
 
   <main class="container">
     <section class="hero">
       <div>
-        <h2>Mis 4 grupos favoritos</h2>
-        <p>Arrastra los grupos entre tiers. Haz clic en un grupo para ver timeline e integrantes.</p>
+        <h2>Mis 4 grupos de K-Pop favoritos</h2>
+        <p>Explora cada grupo, su timeline de debut y posiciones de integrantes.</p>
       </div>
-      <img src="https://source.unsplash.com/featured/?kpop,bands" alt="kpop" />
+    </section>
+
+    <section class="groups-grid" id="groupsGrid">
+      <!-- Populated by JS -->
     </section>
 
     <section class="tierlist">
+      <h3>Tier Ranking (Arrastra para cambiar posición)</h3>
       <div class="tier-headers">
         <div class="tier-label">S</div>
         <div class="tier-label">A</div>
@@ -36,15 +40,10 @@
         <div class="tier" data-tier="C"></div>
       </div>
     </section>
-
-    <section class="details" id="details">
-      <button id="closeDetails" class="close">Cerrar</button>
-      <div id="detailContent"></div>
-    </section>
   </main>
 
   <footer class="site-footer">
-    <small>Landing generada — editable. Imágenes vía Unsplash (placeholders).</small>
+    <small>Landing responsive — HTML, CSS, JS vanilla.</small>
   </footer>
 
   <script src="script.js"></script>

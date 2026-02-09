@@ -6,13 +6,13 @@ const groups = [
     debut: '2020-11-30',
     initialTier: 'S',
     members: [
-      {name:'Jungwon', position:'Leader, dancer, vocalist'},
-      {name:'Heeseung', position:'Main vocalist, dancer'},
-      {name:'Jay', position:'Lead rapper'},
-      {name:'Jake', position:'Lead vocalist'},
-      {name:'Sunghoon', position:'Vocalist, visual'},
+      {name:'Jungwon', position:'Leader, Dancer, Vocalist'},
+      {name:'Heeseung', position:'Main Vocalist, Dancer'},
+      {name:'Jay', position:'Lead Rapper'},
+      {name:'Jake', position:'Lead Vocalist'},
+      {name:'Sunghoon', position:'Vocalist, Visual'},
       {name:'Sunoo', position:'Vocalist'},
-      {name:'Ni-ki', position:'Main dancer'}
+      {name:'Ni-ki', position:'Main Dancer'}
     ]
   },
   {
@@ -22,42 +22,68 @@ const groups = [
     debut: '2018-10-24',
     initialTier: 'A',
     members: [
-      {name:'Hongjoong', position:'Leader, rapper, composer'},
-      {name:'Seonghwa', position:'Lead vocalist, visual'},
-      {name:'Yunho', position:'Main dancer, vocalist'},
-      {name:'Yeosang', position:'Vocalist, visual'},
+      {name:'Hongjoong', position:'Leader, Rapper, Composer'},
+      {name:'Seonghwa', position:'Lead Vocalist, Visual'},
+      {name:'Yunho', position:'Main Dancer, Vocalist'},
+      {name:'Yeosang', position:'Vocalist, Visual'},
       {name:'San', position:'Vocalist'},
-      {name:'Mingi', position:'Main rapper'},
-      {name:'Wooyoung', position:'Main dancer, vocalist'},
-      {name:'Jongho', position:'Main vocalist'}
+      {name:'Mingi', position:'Main Rapper'},
+      {name:'Wooyoung', position:'Main Dancer, Vocalist'},
+      {name:'Jongho', position:'Main Vocalist'}
     ]
   },
   {
     id: 'izna',
     name: 'Izna',
     image: 'imagenes/izna.svg',
-    debut: 'Por confirmar',
+    debut: '2024 (Proyecto IZ)',
     initialTier: 'B',
     members: [
-      {name:'Miembro 1', position:'Posición 1'},
-      {name:'Miembro 2', position:'Posición 2'},
-      {name:'Miembro 3', position:'Posición 3'}
+      {name:'Chaewon', position:'Leader, Vocalist'},
+      {name:'Sakura', position:'Lead Dancer, Vocalist'},
+      {name:'Eunbi', position:'Main Vocalist'},
+      {name:'Yuri', position:'Lead Dancer, Rapper'}
     ]
   },
   {
     id: 'andteam',
     name: '&TEAM',
     image: 'imagenes/andteam.svg',
-    debut: 'Por confirmar',
+    debut: '2022-12-28',
     initialTier: 'C',
     members: [
-      {name:'Miembro A', position:'Posición A'},
-      {name:'Miembro B', position:'Posición B'},
-      {name:'Miembro C', position:'Posición C'}
+      {name:'Fuma', position:'Leader, Dancer'},
+      {name:'Harua', position:'Main Vocalist'},
+      {name:'Taki', position:'Dancer, Rapper'},
+      {name:'Yuma', position:'Vocalist'},
+      {name:'Nikki', position:'Sub-Vocalist, Dancer'},
+      {name:'EJ', position:'Lead Rapper'},
+      {name:'Maki', position:'Vocalist, Dancer'}
     ]
   }
 ];
 
+// Render Group Cards with Members Table
+function renderGroupsGrid(){
+  const grid = document.getElementById('groupsGrid');
+  grid.innerHTML = groups.map(g=>`
+    <div class="group-card">
+      <div class="group-header">
+        <h3>${g.name}</h3>
+        <div class="meta">Debut: ${g.debut}</div>
+      </div>
+      <img src="${g.image}" alt="${g.name}" class="group-image" />
+      <div class="group-members">
+        <h4>Integrantes (${g.members.length})</h4>
+        <table class="members-table">
+          ${g.members.map(m=>`<tr><td>${m.name}</td><td>${m.position}</td></tr>`).join('')}
+        </table>
+      </div>
+    </div>
+  `).join('');
+}
+
+// Create Draggable Card for Tierlist
 function createCard(g){
   const el = document.createElement('div');
   el.className = 'card';
@@ -67,7 +93,7 @@ function createCard(g){
     <img src="${g.image}" alt="${g.name}" />
     <div class="info">
       <div class="name">${g.name}</div>
-      <div class="meta">Debut: ${g.debut}</div>
+      <div class="meta">${g.debut}</div>
     </div>
   `;
 
@@ -76,36 +102,18 @@ function createCard(g){
     e.dataTransfer.effectAllowed = 'move';
   });
 
-  el.addEventListener('click', ()=>openDetails(g));
-
   return el;
 }
 
-function openDetails(g){
-  const panel = document.getElementById('details');
-  const content = document.getElementById('detailContent');
-  content.innerHTML = `
-    <h3>${g.name}</h3>
-    <div><strong>Debut:</strong> ${g.debut}</div>
-    <div class="members">
-      <h4>Integrantes</h4>
-      ${g.members.map(m=>`<div class="member"><strong>${m.name}</strong> — ${m.position}</div>`).join('')}
-    </div>
-  `;
-  panel.style.display = 'block';
-}
-
-function closeDetails(){
-  document.getElementById('details').style.display = 'none';
-}
-
-function setup(){
+// Setup Tierlist Drag & Drop
+function setupTierlist(){
   const tiers = document.querySelectorAll('.tier');
   tiers.forEach(t=>{
     t.addEventListener('dragover',(e)=>{e.preventDefault();t.classList.add('dragover')});
     t.addEventListener('dragleave',()=>t.classList.remove('dragover'));
     t.addEventListener('drop',(e)=>{
-      e.preventDefault();t.classList.remove('dragover');
+      e.preventDefault();
+      t.classList.remove('dragover');
       const id = e.dataTransfer.getData('text/plain');
       const grp = groups.find(x=>x.id===id);
       if(!grp) return;
@@ -113,13 +121,15 @@ function setup(){
     });
   });
 
-  // Render initial
+  // Populate initial tiers
   groups.forEach(g=>{
     const column = document.querySelector(`.tier[data-tier="${g.initialTier}"]`);
     if(column) column.appendChild(createCard(g));
   });
-
-  document.getElementById('closeDetails').addEventListener('click', closeDetails);
 }
 
-document.addEventListener('DOMContentLoaded', setup);
+// Initialize
+document.addEventListener('DOMContentLoaded', ()=>{
+  renderGroupsGrid();
+  setupTierlist();
+});
