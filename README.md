@@ -1,26 +1,34 @@
-# Landing Kpop — Tierlist
+###PROMPT 1###
 
-## Descripción
-Landing page responsive con:
-- **Grid de grupos K-Pop** con imágenes locales (SVGs) y tablas de integrantes visibles
-- **Lineahistoria (Debut)** de cada grupo
-- **Tierlist interactivo** arrastrable en 4 categorías (S, A, B, C)
-- **Diseño responsive** para escritorio, tablet y móvil
+Quiero que me hagas una landing page sencilla, usando HTML, CSS y JAVASCRIPT (vanilla, sin ningún tipo de framework).
 
-## Contenido
-- `index.html` — HTML
-- `styles.css` — estilos + grid responsive
-- `script.js` — datos de grupos, tablas de integrantes, drag/drop
-- `imagenes/` — 4 SVGs temáticos (enhypen.svg, ateez.svg, izna.svg, andteam.svg)
+La landing debe ser responsive y verse apropiadamente en distintos dispositivos (escritorio, tablet, smartphone) independientemente de la resolución.
 
-## Grupos Incluidos
-1. **ENHYPEN** (Debut: 2020-11-30) — 7 integrantes
-2. **ATEEZ** (Debut: 2018-10-24) — 8 integrantes
-3. **Izna** (Debut: 2024) — 4 integrantes
-4. **&TEAM** (Debut: 2022-12-28) — 7 integrantes
+Quiero que me hagas una tierlist de mis 4 grupos de kpop favoritos.
 
-## Cómo usar
-1. Abre `index.html` en el navegador
-2. Visualiza los 4 grupos con sus integrantes en tablas
-3. Arrastra los cards de grupos entre tiers para rankearlos
-4. Todos los cambios están en la misma página (sin modales)
+1.Enhypen
+2.Ateez
+3.Izna
+4.&TEAM
+
+Quiero imagenes acorde a la temática, que tenga linea temporal de el inicio de cada grupo. Añade tambien las posiciones de cada integrante del grupo.
+
+###PROMPT 2###
+
+Creame una carpeta que se llame imagenes y tenga las imagenes que has añadido.
+
+###PROMPT 3###
+
+Quiero que me añadas una imagen de cada grupo con los integrantes, hazme en una tabla lo que aparece en ventana emergente para que no tenga que pinchar encima.
+
+###PROMPT 4###
+
+Cambiame el color del fondo de la pagina a un gris claro casi azul.
+
+###PROMPT 5###
+
+Quiero que cuando se cambie el el grupo de la columna de tierlist, desaparezca el que sale por defecto y que no se repita el mismo en la columna.
+
+###PROMPT 6###
+
+Añademe un apartado de canción favorita con el video de NASA-ATEEZ.
