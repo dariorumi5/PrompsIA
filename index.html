@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tierlist Kpop — Landing</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>Tierlist Kpop</h1>
+    <p class="subtitle">Tus grupos favoritos en una landing responsive</p>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <h2>Mis 4 grupos favoritos</h2>
+        <p>Arrastra los grupos entre tiers. Haz clic en un grupo para ver timeline e integrantes.</p>
+      </div>
+      <img src="https://source.unsplash.com/featured/?kpop,bands" alt="kpop" />
+    </section>
+
+    <section class="tierlist">
+      <div class="tier-headers">
+        <div class="tier-label">S</div>
+        <div class="tier-label">A</div>
+        <div class="tier-label">B</div>
+        <div class="tier-label">C</div>
+      </div>
+
+      <div class="tiers">
+        <div class="tier" data-tier="S"></div>
+        <div class="tier" data-tier="A"></div>
+        <div class="tier" data-tier="B"></div>
+        <div class="tier" data-tier="C"></div>
+      </div>
+    </section>
+
+    <section class="details" id="details">
+      <button id="closeDetails" class="close">Cerrar</button>
+      <div id="detailContent"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>Landing generada — editable. Imágenes vía Unsplash (placeholders).</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
