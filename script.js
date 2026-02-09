@@ -143,6 +143,14 @@ function setupTierlist(){
       const id = e.dataTransfer.getData('text/plain');
       const grp = groups.find(x=>x.id===id);
       if(!grp) return;
+      
+      // Remover el grupo de TODAS las columnas (evita duplicados)
+      document.querySelectorAll('.tier').forEach(tier=>{
+        const existingCard = tier.querySelector(`[data-id="${id}"]`);
+        if(existingCard) existingCard.remove();
+      });
+      
+      // Añadir el card a la columna actual
       t.appendChild(createCard(grp));
     });
   });
